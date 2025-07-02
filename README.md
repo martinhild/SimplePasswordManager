@@ -12,4 +12,3 @@ Ein einfacher Passwortmanager in C# mit WinForms und SQLite.
 ## 🖼️ Mockup
 
 
-![Mockup](docs/mockup.png)
