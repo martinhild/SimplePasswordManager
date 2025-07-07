@@ -11,4 +11,4 @@ Ein einfacher Passwortmanager in C# mit WinForms und SQLite.
 
 ## 🖼️ Klassendiagram
 
-![Klassendiagramm](docs/UML/class_diagram.jpg)
+docs/UML/class_diagram.jpg
