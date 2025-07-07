@@ -1,0 +1,29 @@
+*************************************************************************************************************
+
+Beziehungen der Klassen im Projekt:
+
+
+1. MainForm —[Assoziation]→ PasswordEntry
+MainForm zeigt eine Liste von PasswordEntry-Objekten an.
+
+
+2. MainForm —[Aggregation]→ PasswordGenerator, ValidationService, DatabaseService, CryptoHelper
+MainForm nutzt diese Services (sie leben aber unabhängig von MainForm)
+
+
+3. LoginForm —[Aggregation]→ MasterPasswordService
+LoginForm nutzt MasterPasswordService, aber der Service lebt unabhängig.
+
+
+4. DatabaseService —[Komposition]→ PasswordEntry
+DatabaseService verwaltet die Lebensdauer von PasswordEntry-Objekten in der Datenbank.
+Sie ist "Besitzer" der Entries.
+
+
+6. ValidationService —[Assoziation]→ PasswordEntry
+Validiert PasswordEntry, besitzt sie aber nicht.
+
+
+*************************************************************************************************************
+
+
