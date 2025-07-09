@@ -110,18 +110,18 @@
             // 
             // txtGenerated
             // 
-            txtGenerated.Location = new Point(75, 164);
+            txtGenerated.Location = new Point(47, 168);
             txtGenerated.Name = "txtGenerated";
             txtGenerated.ReadOnly = true;
-            txtGenerated.Size = new Size(202, 23);
+            txtGenerated.Size = new Size(293, 23);
             txtGenerated.TabIndex = 7;
             txtGenerated.TextChanged += textBox1_TextChanged;
             // 
             // btnGenerate
             // 
-            btnGenerate.Location = new Point(75, 132);
+            btnGenerate.Location = new Point(47, 135);
             btnGenerate.Name = "btnGenerate";
-            btnGenerate.Size = new Size(202, 23);
+            btnGenerate.Size = new Size(293, 23);
             btnGenerate.TabIndex = 6;
             btnGenerate.Text = "Passwort generieren";
             btnGenerate.UseVisualStyleBackColor = true;
@@ -180,6 +180,7 @@
             nudLength.TabIndex = 1;
             nudLength.Tag = "";
             nudLength.Value = new decimal(new int[] { 8, 0, 0, 0 });
+            nudLength.ValueChanged += nudLength_ValueChanged;
             // 
             // lblGeneratorTitle
             // 
@@ -212,7 +213,7 @@
             // chkShowPassword
             // 
             chkShowPassword.AutoSize = true;
-            chkShowPassword.Location = new Point(123, 101);
+            chkShowPassword.Location = new Point(141, 101);
             chkShowPassword.Name = "chkShowPassword";
             chkShowPassword.Size = new Size(125, 19);
             chkShowPassword.TabIndex = 8;
@@ -222,23 +223,23 @@
             // 
             // btnSaveEntry
             // 
-            btnSaveEntry.Location = new Point(72, 166);
+            btnSaveEntry.Location = new Point(51, 166);
             btnSaveEntry.Name = "btnSaveEntry";
-            btnSaveEntry.Size = new Size(194, 23);
+            btnSaveEntry.Size = new Size(266, 23);
             btnSaveEntry.TabIndex = 7;
             btnSaveEntry.Text = "Speichern";
             btnSaveEntry.UseVisualStyleBackColor = true;
             // 
             // txtDescription
             // 
-            txtDescription.Location = new Point(121, 125);
+            txtDescription.Location = new Point(139, 125);
             txtDescription.Name = "txtDescription";
             txtDescription.Size = new Size(176, 23);
             txtDescription.TabIndex = 6;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(121, 72);
+            txtPassword.Location = new Point(139, 72);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(178, 23);
             txtPassword.TabIndex = 5;
@@ -247,7 +248,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(33, 129);
+            label2.Location = new Point(51, 129);
             label2.Name = "label2";
             label2.Size = new Size(79, 15);
             label2.TabIndex = 4;
@@ -256,7 +257,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(33, 77);
+            label1.Location = new Point(51, 77);
             label1.Name = "label1";
             label1.Size = new Size(54, 15);
             label1.TabIndex = 3;
@@ -265,7 +266,7 @@
             // lblUsername
             // 
             lblUsername.AutoSize = true;
-            lblUsername.Location = new Point(33, 39);
+            lblUsername.Location = new Point(51, 39);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(83, 15);
             lblUsername.TabIndex = 2;
@@ -273,7 +274,7 @@
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(121, 36);
+            txtUsername.Location = new Point(139, 36);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(178, 23);
             txtUsername.TabIndex = 1;
