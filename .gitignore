@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .vs
 
 # Build output
@@ -6,3 +7,9 @@
 
 # VS-Cache
 .vs/
+=======
+# VS + Build Output
+.vs/
+bin/
+obj/
+>>>>>>> origin/feature-cryptohelper

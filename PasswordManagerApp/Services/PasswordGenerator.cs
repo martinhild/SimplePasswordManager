@@ -1,6 +1,5 @@
 ﻿
 using System.Security.Cryptography;
-
 namespace PasswordManagerApp.Services
 {
     public class PasswordGenerator
