@@ -1,15 +1,76 @@
-<<<<<<< HEAD
-.vs
-
-# Build output
-/bin/
-/obj/
-
-# VS-Cache
+# Visual Studio
 .vs/
-=======
-# VS + Build Output
-.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build-Ordner
 bin/
 obj/
->>>>>>> origin/feature-cryptohelper
+
+# Test-Ergebnisse
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+*.log
+
+# Build-Ausgaben
+*.dll
+*.exe
+*.pdb
+*.cache
+*.mdb
+*.db
+*.bak
+
+# Paketverwaltung
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Rider & Resharper
+.idea/
+*.DotSettings.user
+
+# Backup-Dateien
+*~
+*.orig
+
+# NuGet
+.nuget/
+*.nupkg
+*.snupkg
+
+# Entity Framework
+Migrations/
+
+# Logs
+*.log
+
+# Sonstiges
+_ReSharper*/
+*.tlog
+*.tmp
+*.log
+*.DS_Store
+Thumbs.db
+
+# Webprojekt-spezifisch (falls vorhanden)
+wwwroot/node_modules/
+node_modules/
+dist/
+build/
+.env
+.env.*
+
+# Git
+*.swp
+*.swo
+*.rej
+*.patch
