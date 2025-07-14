@@ -64,6 +64,7 @@ namespace PasswordManagerApp.Services
             }
         }
 
+        // MasterConfig
         public MasterConfig GetMasterConfig()
         {
             using var ctx = new PasswordDbContext();

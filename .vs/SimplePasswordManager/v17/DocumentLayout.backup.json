@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\user1\\Development\\Cs_Projekte\\SimplePasswordManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|c:\\users\\user1\\development\\cs_projekte\\simplepasswordmanager\\passwordmanagerapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|solutionrelative:passwordmanagerapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|c:\\users\\user1\\development\\cs_projekte\\simplepasswordmanager\\passwordmanagerapp\\services\\validationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|solutionrelative:passwordmanagerapp\\services\\validationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{89B5A50F-FEC6-47A9-954D-AE23961AB755}|PasswordManagerApp.Tests\\PasswordManagerApp.Tests.csproj|c:\\users\\user1\\development\\cs_projekte\\simplepasswordmanager\\passwordmanagerapp.tests\\validationservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{89B5A50F-FEC6-47A9-954D-AE23961AB755}|PasswordManagerApp.Tests\\PasswordManagerApp.Tests.csproj|solutionrelative:passwordmanagerapp.tests\\validationservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|c:\\users\\user1\\development\\cs_projekte\\simplepasswordmanager\\passwordmanagerapp\\services\\masterpasswordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|solutionrelative:passwordmanagerapp\\services\\masterpasswordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|c:\\users\\user1\\development\\cs_projekte\\simplepasswordmanager\\passwordmanagerapp\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|solutionrelative:passwordmanagerapp\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|c:\\users\\user1\\development\\cs_projekte\\simplepasswordmanager\\passwordmanagerapp\\services\\cryptohelper.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|solutionrelative:passwordmanagerapp\\services\\cryptohelper.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +35,67 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainForm.cs [Entwurf]",
-              "DocumentMoniker": "C:\\Users\\user1\\Development\\Cs_Projekte\\SimplePasswordManager\\PasswordManagerApp\\MainForm.cs",
-              "RelativeDocumentMoniker": "PasswordManagerApp\\MainForm.cs",
-              "ToolTip": "C:\\Users\\user1\\Development\\Cs_Projekte\\SimplePasswordManager\\PasswordManagerApp\\MainForm.cs [Entwurf]*",
-              "RelativeToolTip": "PasswordManagerApp\\MainForm.cs [Entwurf]*",
+              "Title": "ValidationService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Development\\Cs_Projekte\\SimplePasswordManager\\PasswordManagerApp\\Services\\ValidationService.cs",
+              "RelativeDocumentMoniker": "PasswordManagerApp\\Services\\ValidationService.cs",
+              "ToolTip": "C:\\Users\\user1\\Development\\Cs_Projekte\\SimplePasswordManager\\PasswordManagerApp\\Services\\ValidationService.cs",
+              "RelativeToolTip": "PasswordManagerApp\\Services\\ValidationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T12:47:08.558Z",
-              "EditorCaption": " [Entwurf]"
+              "WhenOpened": "2025-07-14T11:28:26.53Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ValidationServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Development\\Cs_Projekte\\SimplePasswordManager\\PasswordManagerApp.Tests\\ValidationServiceTests.cs",
+              "RelativeDocumentMoniker": "PasswordManagerApp.Tests\\ValidationServiceTests.cs",
+              "ToolTip": "C:\\Users\\user1\\Development\\Cs_Projekte\\SimplePasswordManager\\PasswordManagerApp.Tests\\ValidationServiceTests.cs",
+              "RelativeToolTip": "PasswordManagerApp.Tests\\ValidationServiceTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T11:29:35.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DatabaseService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Development\\Cs_Projekte\\SimplePasswordManager\\PasswordManagerApp\\Services\\DatabaseService.cs",
+              "RelativeDocumentMoniker": "PasswordManagerApp\\Services\\DatabaseService.cs",
+              "ToolTip": "C:\\Users\\user1\\Development\\Cs_Projekte\\SimplePasswordManager\\PasswordManagerApp\\Services\\DatabaseService.cs",
+              "RelativeToolTip": "PasswordManagerApp\\Services\\DatabaseService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T11:28:01.608Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MasterPasswordService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Development\\Cs_Projekte\\SimplePasswordManager\\PasswordManagerApp\\Services\\MasterPasswordService.cs",
+              "RelativeDocumentMoniker": "PasswordManagerApp\\Services\\MasterPasswordService.cs",
+              "ToolTip": "C:\\Users\\user1\\Development\\Cs_Projekte\\SimplePasswordManager\\PasswordManagerApp\\Services\\MasterPasswordService.cs",
+              "RelativeToolTip": "PasswordManagerApp\\Services\\MasterPasswordService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T11:27:52.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CryptoHelper.cs.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Development\\Cs_Projekte\\SimplePasswordManager\\PasswordManagerApp\\Services\\CryptoHelper.cs.cs",
+              "RelativeDocumentMoniker": "PasswordManagerApp\\Services\\CryptoHelper.cs.cs",
+              "ToolTip": "C:\\Users\\user1\\Development\\Cs_Projekte\\SimplePasswordManager\\PasswordManagerApp\\Services\\CryptoHelper.cs.cs",
+              "RelativeToolTip": "PasswordManagerApp\\Services\\CryptoHelper.cs.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAgwFoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T11:26:07.24Z",
+              "EditorCaption": ""
             }
           ]
         }
