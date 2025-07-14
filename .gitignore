@@ -1,4 +1,5 @@
 # Temporäre SQLite-Dateien
+*.db
 *.db-wal
 *.db-shm
 
@@ -13,6 +14,14 @@
 bin/
 obj/
 
+# Build-Ausgaben
+*.dll
+*.exe
+*.pdb
+*.cache
+*.mdb
+*.bak
+
 # Test-Ergebnisse
 TestResults/
 *.trx
@@ -20,61 +29,38 @@ TestResults/
 *.coveragexml
 *.log
 
-# Build-Ausgaben
-*.dll
-*.exe
-*.pdb
-*.cache
-*.mdb
-*.db
-*.bak
-
 # Paketverwaltung
 *.nupkg
 *.snupkg
 *.nuspec
+.nuget/
 packages/
 project.lock.json
 project.fragment.lock.json
 artifacts/
 
-# Rider & Resharper
+# Entity Framework
+Migrations/
+
+# JetBrains (Rider, ReSharper)
 .idea/
+_ReSharper*/
 *.DotSettings.user
 
 # Backup-Dateien
 *~
 *.orig
 
-# NuGet
-.nuget/
-*.nupkg
-*.snupkg
+# Git-spezifisch
+*.swp
+*.swo
+*.rej
+*.patch
 
-# Entity Framework
-Migrations/
-
-# Logs
-*.log
-
-# Sonstiges
-_ReSharper*/
-*.tlog
-*.tmp
-*.log
-*.DS_Store
-Thumbs.db
-
-# Webprojekt-spezifisch (falls vorhanden)
+# Webprojekt (optional)
 wwwroot/node_modules/
 node_modules/
 dist/
 build/
 .env
 .env.*
-
-# Git
-*.swp
-*.swo
-*.rej
-*.patch
