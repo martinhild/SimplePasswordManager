@@ -1,1 +1,4 @@
-.vs
+# VS + Build Output
+.vs/
+bin/
+obj/
