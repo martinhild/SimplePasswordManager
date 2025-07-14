@@ -1,1 +1,8 @@
 .vs
+
+# Build output
+/bin/
+/obj/
+
+# VS-Cache
+.vs/
