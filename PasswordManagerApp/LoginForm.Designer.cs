@@ -41,6 +41,7 @@
             txtMasterPassword.Size = new Size(300, 23);
             txtMasterPassword.TabIndex = 0;
             txtMasterPassword.UseSystemPasswordChar = true;
+            txtMasterPassword.TextChanged += txtMasterPassword_TextChanged;
             // 
             // chkShowPassword
             // 

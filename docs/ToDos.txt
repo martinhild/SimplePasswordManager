@@ -1,0 +1,3 @@
+- Login button setzt MasterPassword wenn noch keins vorhanden ist - ändern!
+- Verschlüsselung/Hash (?) optimieren (Das verfahrne mit Byte-Array)
+- Zeitpunkt der Speicherung/änderung als Spalte anzeigen un in DB aufnehmen

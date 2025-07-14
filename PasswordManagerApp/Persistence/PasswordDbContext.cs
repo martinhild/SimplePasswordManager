@@ -13,12 +13,10 @@ namespace PasswordManagerApp.Persistence
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // Relativer Pfad, wie er jetzt steht:
+            // Relativer Pfad:
             var relativePath = Path.Combine("..", "..", "..", "..", "data", "passwords.db");
 
             optionsBuilder.UseSqlite($"Data Source={relativePath}");
         }
-
     }
-
 }

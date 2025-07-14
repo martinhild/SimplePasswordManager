@@ -27,3 +27,22 @@ Validiert PasswordEntry, besitzt sie aber nicht.
 *************************************************************************************************************
 
 
+Login-Form blockiert .exe:
+
+Problem:
+Im ersten Entwurf wurde die App mit "Application.Run(new LoginForm())" gestartet. Dabei blieb LoginForm im Hintergrund aktiv, nachdem das Hauptfenster (MainForm) geöffnet wurde. Das führte dazu, dass beim Schließen der App der Prozess nicht korrekt beendete und bei erneutem Build die .exe-Datei gesperrt war.
+
+Lösung:
+Die LoginForm wird nun als modales* Dialogfenster ("ShowDialog()") geöffnet. Nach erfolgreichem Login wird sie explizit geschlossen ("this.Close()"), und erst dann wird das Hauptfenster (MainForm) mit "Application.Run()" gestartet.
+(*modal: Zustand oder Fenster, das den User zwingt, sich damit zu beschäftigen, bevor es weiter geht.)
+
+Ergebnis:
+Die Anwendung wird vollständig beendet, sobald MainForm geschlossen wird – ohne hängenbleibende Prozesse.
+
+
+*************************************************************************************************************
+
+
+Anzeigebereich Reihenfolge der Spalten:
+
+Wurde getauscht (erklären, begründen, ausformulieren...)

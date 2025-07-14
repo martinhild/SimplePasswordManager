@@ -41,16 +41,20 @@ namespace PasswordManagerApp
                 return;
             }
 
-            if(masterPwService.VerifyMasterPassword(pw))
+            if (masterPwService.VerifyMasterPassword(pw))
             {
-                var main = new MainForm();
-                main.Show();
-                this.Hide();
+                this.DialogResult = DialogResult.OK; // Login erfolgreich
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Falsches Masterpasswort.");
             }
+        }
+
+        private void txtMasterPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -1,10 +1,26 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user1\\Development\\Cs_Projekte\\SimplePasswordManager\\",
+  "WorkspaceRootPath": "F:\\Martin\\Development\\CS\\SimplePasswordManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|c:\\users\\user1\\development\\cs_projekte\\simplepasswordmanager\\passwordmanagerapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|f:\\martin\\development\\cs\\simplepasswordmanager\\passwordmanagerapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|solutionrelative:passwordmanagerapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|f:\\martin\\development\\cs\\simplepasswordmanager\\passwordmanagerapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|solutionrelative:passwordmanagerapp\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|f:\\martin\\development\\cs\\simplepasswordmanager\\passwordmanagerapp\\persistence\\passworddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|solutionrelative:passwordmanagerapp\\persistence\\passworddbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|f:\\martin\\development\\cs\\simplepasswordmanager\\passwordmanagerapp\\models\\passwordentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|solutionrelative:passwordmanagerapp\\models\\passwordentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|f:\\martin\\development\\cs\\simplepasswordmanager\\passwordmanagerapp\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6F271DD-1352-4A55-919B-9411894E8053}|PasswordManagerApp\\PasswordManagerApp.csproj|solutionrelative:passwordmanagerapp\\services\\databaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +35,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainForm.cs [Entwurf]",
-              "DocumentMoniker": "C:\\Users\\user1\\Development\\Cs_Projekte\\SimplePasswordManager\\PasswordManagerApp\\MainForm.cs",
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "F:\\Martin\\Development\\CS\\SimplePasswordManager\\PasswordManagerApp\\MainForm.cs",
               "RelativeDocumentMoniker": "PasswordManagerApp\\MainForm.cs",
-              "ToolTip": "C:\\Users\\user1\\Development\\Cs_Projekte\\SimplePasswordManager\\PasswordManagerApp\\MainForm.cs [Entwurf]",
+              "ToolTip": "F:\\Martin\\Development\\CS\\SimplePasswordManager\\PasswordManagerApp\\MainForm.cs",
+              "RelativeToolTip": "PasswordManagerApp\\MainForm.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAswCgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T10:12:25.864Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PasswordEntry.cs",
+              "DocumentMoniker": "F:\\Martin\\Development\\CS\\SimplePasswordManager\\PasswordManagerApp\\Models\\PasswordEntry.cs",
+              "RelativeDocumentMoniker": "PasswordManagerApp\\Models\\PasswordEntry.cs",
+              "ToolTip": "F:\\Martin\\Development\\CS\\SimplePasswordManager\\PasswordManagerApp\\Models\\PasswordEntry.cs",
+              "RelativeToolTip": "PasswordManagerApp\\Models\\PasswordEntry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T10:43:32.517Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DatabaseService.cs",
+              "DocumentMoniker": "F:\\Martin\\Development\\CS\\SimplePasswordManager\\PasswordManagerApp\\Services\\DatabaseService.cs",
+              "RelativeDocumentMoniker": "PasswordManagerApp\\Services\\DatabaseService.cs",
+              "ToolTip": "F:\\Martin\\Development\\CS\\SimplePasswordManager\\PasswordManagerApp\\Services\\DatabaseService.cs",
+              "RelativeToolTip": "PasswordManagerApp\\Services\\DatabaseService.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T09:25:19.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainForm.cs [Entwurf]",
+              "DocumentMoniker": "F:\\Martin\\Development\\CS\\SimplePasswordManager\\PasswordManagerApp\\MainForm.cs",
+              "RelativeDocumentMoniker": "PasswordManagerApp\\MainForm.cs",
+              "ToolTip": "F:\\Martin\\Development\\CS\\SimplePasswordManager\\PasswordManagerApp\\MainForm.cs [Entwurf]",
               "RelativeToolTip": "PasswordManagerApp\\MainForm.cs [Entwurf]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T12:47:08.558Z",
+              "WhenOpened": "2025-07-11T09:09:50.963Z",
               "EditorCaption": " [Entwurf]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PasswordDbContext.cs",
+              "DocumentMoniker": "F:\\Martin\\Development\\CS\\SimplePasswordManager\\PasswordManagerApp\\Persistence\\PasswordDbContext.cs",
+              "RelativeDocumentMoniker": "PasswordManagerApp\\Persistence\\PasswordDbContext.cs",
+              "ToolTip": "F:\\Martin\\Development\\CS\\SimplePasswordManager\\PasswordManagerApp\\Persistence\\PasswordDbContext.cs",
+              "RelativeToolTip": "PasswordManagerApp\\Persistence\\PasswordDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T10:44:00.943Z",
+              "EditorCaption": ""
             }
           ]
         }
