@@ -1,3 +1,7 @@
+# Temporäre SQLite-Dateien
+*.db-wal
+*.db-shm
+
 # Visual Studio
 .vs/
 *.suo
