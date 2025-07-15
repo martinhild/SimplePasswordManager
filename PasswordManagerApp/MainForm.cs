@@ -209,5 +209,10 @@ namespace SimplePasswordManager
         {
 
         }
+
+        private void txtGenerated_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -155,6 +155,7 @@
             txtGenerated.ReadOnly = true;
             txtGenerated.Size = new Size(293, 23);
             txtGenerated.TabIndex = 7;
+            txtGenerated.TextChanged += txtGenerated_TextChanged;
             // 
             // btnGenerate
             // 
