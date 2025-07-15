@@ -103,6 +103,7 @@
             // 
             // lblTitel
             // 
+            lblTitel.BackColor = SystemColors.ActiveCaption;
             lblTitel.Dock = DockStyle.Top;
             lblTitel.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             lblTitel.Location = new Point(0, 0);
@@ -130,7 +131,8 @@
             // 
             // pnlGenerator
             // 
-            pnlGenerator.BorderStyle = BorderStyle.FixedSingle;
+            pnlGenerator.BackColor = SystemColors.Control;
+            pnlGenerator.BorderStyle = BorderStyle.Fixed3D;
             pnlGenerator.Controls.Add(txtGenerated);
             pnlGenerator.Controls.Add(btnGenerate);
             pnlGenerator.Controls.Add(chkSpecial);
@@ -161,7 +163,7 @@
             btnGenerate.FlatStyle = FlatStyle.Flat;
             btnGenerate.Location = new Point(47, 135);
             btnGenerate.Name = "btnGenerate";
-            btnGenerate.Size = new Size(293, 23);
+            btnGenerate.Size = new Size(293, 25);
             btnGenerate.TabIndex = 6;
             btnGenerate.Text = "Passwort generieren";
             btnGenerate.UseVisualStyleBackColor = false;
@@ -231,7 +233,7 @@
             // 
             // pnlNewEntry
             // 
-            pnlNewEntry.BorderStyle = BorderStyle.FixedSingle;
+            pnlNewEntry.BorderStyle = BorderStyle.Fixed3D;
             pnlNewEntry.Controls.Add(chkShowPassword);
             pnlNewEntry.Controls.Add(btnSaveEntry);
             pnlNewEntry.Controls.Add(txtDescription);
@@ -265,7 +267,7 @@
             btnSaveEntry.FlatStyle = FlatStyle.Flat;
             btnSaveEntry.Location = new Point(51, 166);
             btnSaveEntry.Name = "btnSaveEntry";
-            btnSaveEntry.Size = new Size(266, 23);
+            btnSaveEntry.Size = new Size(266, 25);
             btnSaveEntry.TabIndex = 7;
             btnSaveEntry.Text = "Speichern";
             btnSaveEntry.UseVisualStyleBackColor = false;
@@ -335,7 +337,7 @@
             // pnlSavedEntries
             // 
             pnlSavedEntries.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            pnlSavedEntries.BorderStyle = BorderStyle.FixedSingle;
+            pnlSavedEntries.BorderStyle = BorderStyle.Fixed3D;
             pnlSavedEntries.Controls.Add(tableLayoutPanel1);
             pnlSavedEntries.Controls.Add(pnlEntryActions);
             pnlSavedEntries.Location = new Point(3, 263);
@@ -355,7 +357,7 @@
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(792, 241);
+            tableLayoutPanel1.Size = new Size(790, 236);
             tableLayoutPanel1.TabIndex = 10;
             // 
             // lbl_gespZugDat
@@ -366,7 +368,7 @@
             lbl_gespZugDat.Location = new Point(3, 0);
             lbl_gespZugDat.Name = "lbl_gespZugDat";
             lbl_gespZugDat.Padding = new Padding(2);
-            lbl_gespZugDat.Size = new Size(786, 23);
+            lbl_gespZugDat.Size = new Size(784, 23);
             lbl_gespZugDat.TabIndex = 3;
             lbl_gespZugDat.Text = "Gespeicherte Zugangsdaten";
             lbl_gespZugDat.Click += label3_Click;
@@ -375,6 +377,7 @@
             // 
             dgvEntries.AllowUserToAddRows = false;
             dgvEntries.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvEntries.BorderStyle = BorderStyle.None;
             dgvEntries.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Window;
@@ -390,7 +393,7 @@
             dgvEntries.ReadOnly = true;
             dgvEntries.RowHeadersVisible = false;
             dgvEntries.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvEntries.Size = new Size(786, 241);
+            dgvEntries.Size = new Size(784, 241);
             dgvEntries.TabIndex = 1;
             dgvEntries.CellContentClick += dgvEntries_CellContentClick;
             // 
@@ -400,9 +403,9 @@
             pnlEntryActions.Controls.Add(btnDeleteEntry);
             pnlEntryActions.Controls.Add(btnShowPassword);
             pnlEntryActions.Dock = DockStyle.Bottom;
-            pnlEntryActions.Location = new Point(0, 241);
+            pnlEntryActions.Location = new Point(0, 236);
             pnlEntryActions.Name = "pnlEntryActions";
-            pnlEntryActions.Size = new Size(792, 32);
+            pnlEntryActions.Size = new Size(790, 35);
             pnlEntryActions.TabIndex = 2;
             pnlEntryActions.Paint += pnlEntryActions_Paint;
             // 
@@ -413,7 +416,7 @@
             btnHideEntry.FlatStyle = FlatStyle.Flat;
             btnHideEntry.Location = new Point(321, 5);
             btnHideEntry.Name = "btnHideEntry";
-            btnHideEntry.Size = new Size(150, 23);
+            btnHideEntry.Size = new Size(150, 25);
             btnHideEntry.TabIndex = 9;
             btnHideEntry.Text = "Verbergen";
             btnHideEntry.UseVisualStyleBackColor = false;
@@ -426,7 +429,7 @@
             btnDeleteEntry.FlatStyle = FlatStyle.Flat;
             btnDeleteEntry.Location = new Point(603, 5);
             btnDeleteEntry.Name = "btnDeleteEntry";
-            btnDeleteEntry.Size = new Size(150, 23);
+            btnDeleteEntry.Size = new Size(150, 25);
             btnDeleteEntry.TabIndex = 9;
             btnDeleteEntry.Text = "Löschen!";
             btnDeleteEntry.UseVisualStyleBackColor = false;
@@ -439,7 +442,7 @@
             btnShowPassword.FlatStyle = FlatStyle.Flat;
             btnShowPassword.Location = new Point(50, 5);
             btnShowPassword.Name = "btnShowPassword";
-            btnShowPassword.Size = new Size(150, 23);
+            btnShowPassword.Size = new Size(150, 25);
             btnShowPassword.TabIndex = 8;
             btnShowPassword.Text = "Anzeigen";
             btnShowPassword.UseVisualStyleBackColor = false;
