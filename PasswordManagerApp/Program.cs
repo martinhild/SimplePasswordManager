@@ -13,13 +13,21 @@ namespace SimplePasswordManager
         {
             ApplicationConfiguration.Initialize();
 
+            // Datenbank und Tabellen sicherstellen
+            using (var context = new PasswordManagerApp.Persistence.PasswordDbContext())
+            {
+                context.Database.EnsureCreated();
+            }
+
             using (var login = new LoginForm())
             {
                 if (login.ShowDialog() == DialogResult.OK)
                 {
-                    Application.Run(new MainForm());
+                    string masterPassword = login.Tag as string ?? throw new Exception("Kein Passwort übergeben.");
+                    Application.Run(new MainForm(masterPassword));
                 }
             }
         }
+
     }
 }

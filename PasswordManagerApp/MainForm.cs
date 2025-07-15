@@ -5,10 +5,18 @@ namespace SimplePasswordManager
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private readonly string _masterPassword;
+        private DataGridViewRow? _lastDecryptedRow = null;
+
+
+        // Konstruktor
+        public MainForm(string masterPassword)
         {
             InitializeComponent();
+            _masterPassword = masterPassword;
             this.Load += MainForm_Load; // Beim Start ausführen.
+            dgvEntries.SelectionChanged += dgvEntries_SelectionChanged;
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -17,37 +25,28 @@ namespace SimplePasswordManager
             LoadEntriesToGrid();
         }
 
+
         private void LoadEntriesToGrid()
         {
             dgvEntries.DataSource = null;
-            dgvEntries.DataSource = new DatabaseService().GetAllEntries();
-            // Spaltenreihenfolge:
-            dgvEntries.Columns["Description"].DisplayIndex = 0;
-            dgvEntries.Columns["Username"].DisplayIndex = 1;
-            dgvEntries.Columns["EncryptedPassword"].DisplayIndex = 2;
-            // Spalte "Id" ausblenden
+            var entries = new DatabaseService().GetAllEntries();
+
+            var displayEntries = entries.Select(entry => new PasswordEntryDisplay
+            {
+                Id = entry.Id,
+                Description = entry.Description,
+                Username = new string('*', entry.Username.Length),
+                Password = new string('*', CryptoHelper.Decrypt(entry.EncryptedPassword, _masterPassword).Length)
+            }).ToList();
+
+            dgvEntries.DataSource = displayEntries;
+
             dgvEntries.Columns["Id"].Visible = false;
-            // Optional: bessere Spaltennamen
             dgvEntries.Columns["Description"].HeaderText = "Beschreibung";
             dgvEntries.Columns["Username"].HeaderText = "Benutzername";
-            dgvEntries.Columns["EncryptedPassword"].HeaderText = "Passwort";
-
+            dgvEntries.Columns["Password"].HeaderText = "Passwort";
         }
 
-        private void pnlGenerator_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chkUpper_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnGenerate_Click(object sender, EventArgs e)
         {
@@ -59,117 +58,144 @@ namespace SimplePasswordManager
             txtGenerated.Text = new PasswordGenerator().Generate(length, useUpper, useDigits, useSpecial);
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblNewEntryTitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void chkShowPassword_CheckedChanged(object sender, EventArgs e)
         {
             txtPassword.UseSystemPasswordChar = !chkShowPassword.Checked;
         }
 
 
-        private void chkSpecial_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chkDigits_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nudLength_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblSavedTitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSaveEntry_Click(object sender, EventArgs e)
         {
+            // Eingaben holen
             string username = txtUsername.Text;
             string password = txtPassword.Text;
             string description = txtDescription.Text;
-
-
-            PasswordEntry NewEntry = new PasswordEntry(username, password, description);
+            // Passwort Verschlüsseln
+            string encrypted = CryptoHelper.Encrypt(password, _masterPassword);
+            // Eingaben validieren
+            if (!ValidationService.IsValidEntry(username, password, description, out string error))
+            {
+                MessageBox.Show(error);
+                return;
+            }
+            // Eintrag erzeugen und anlegen
+            PasswordEntry NewEntry = new PasswordEntry(username, encrypted, description);
             new DatabaseService().CreateEntry(NewEntry);
-
             // Grid aktualisieren
             LoadEntriesToGrid();
         }
 
-        private void lblUsername_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlSavedEntries_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnShowPassword_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnDeleteEntry_Click(object sender, EventArgs e)
         {
-            // Prüfen, ob eine Zeile ausgewählt wurde
             if (dgvEntries.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Keine Zeile zum Löschen ausgewählt.");
-                return; // Nichts tun
+                return;
             }
 
-            // Ausgewählte Zeile holen
             var selectedRow = dgvEntries.SelectedRows[0];
 
-            // Prüfen, ob das DataBoundItem ein PasswordEntry ist
-            if (selectedRow.DataBoundItem is PasswordEntry entry)
+            // ID manuell auslesen
+            if (selectedRow.Cells["Id"].Value is int id)
             {
-                // Benutzer zur Bestätigung auffordern
+                var entry = new DatabaseService().GetAllEntries().FirstOrDefault(e => e.Id == id);
+                if (entry == null)
+                {
+                    MessageBox.Show("Eintrag nicht gefunden.");
+                    return;
+                }
+
                 var confirm = MessageBox.Show(
-                    $"Sind Sie sicher, dass Sie diesen Eintrag \"{entry.Description}\"löschen möchten?",
+                    $"Sind Sie sicher, dass Sie diesen Eintrag \"{entry.Description}\" löschen möchten?",
                     "Löschen bestätigen",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning
                 );
 
-                // Wenn der Benutzer NICHT auf "Ja" klickt → abbrechen
                 if (confirm != DialogResult.Yes)
                     return;
 
-                // Eintrag aus der Datenbank löschen
                 new DatabaseService().DeleteEntry(entry.Id);
-
-                // Anzeige aktualisieren (Grid neu laden)
                 LoadEntriesToGrid();
             }
         }
 
-        private void pnlNewEntry_Paint(object sender, PaintEventArgs e)
+
+        private void btnShowPassword_Click(object sender, EventArgs e)
+        {
+            if (dgvEntries.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Bitte einen Eintrag auswählen.");
+                return;
+            }
+
+            var selectedRow = dgvEntries.SelectedRows[0];
+            int id = (int)selectedRow.Cells["Id"].Value;
+
+            var entry = new DatabaseService().GetAllEntries().FirstOrDefault(e => e.Id == id);
+            if (entry == null) return;
+
+            string decryptedPw = CryptoHelper.Decrypt(entry.EncryptedPassword, _masterPassword);
+
+            selectedRow.Cells["Username"].Value = entry.Username;
+            selectedRow.Cells["Password"].Value = decryptedPw;
+
+            _lastDecryptedRow = selectedRow;
+        }
+
+
+
+        private void dgvEntries_SelectionChanged(object sender, EventArgs e)
+        {
+            if (_lastDecryptedRow != null)
+            {
+                // Alte Datenbank-ID holen
+                int oldId = (int)_lastDecryptedRow.Cells["Id"].Value;
+
+                // Originaldaten aus DB holen
+                var entry = new DatabaseService().GetAllEntries().FirstOrDefault(e => e.Id == oldId);
+                if (entry != null)
+                {
+                    _lastDecryptedRow.Cells["Username"].Value = new string('*', entry.Username.Length);
+                    string decrypted = CryptoHelper.Decrypt(entry.EncryptedPassword, _masterPassword);
+                    _lastDecryptedRow.Cells["Password"].Value = new string('*', decrypted.Length);
+                }
+
+                _lastDecryptedRow = null; // Reset
+            }
+        }
+
+
+
+        private void dgvEntries_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnHideEntry_Click(object sender, EventArgs e)
+        {
+            // Wenn zuletzt entschlüsselter Eintrag existiert
+            if (_lastDecryptedRow != null)
+            {
+                // ID auslesen
+                if (_lastDecryptedRow.Cells["Id"].Value is int id)
+                {
+                    // Originaleintrag aus DB holen
+                    var entry = new DatabaseService().GetAllEntries().FirstOrDefault(e => e.Id == id);
+                    if (entry != null)
+                    {
+                        _lastDecryptedRow.Cells["Username"].Value = new string('*', entry.Username.Length);
+                        string decrypted = CryptoHelper.Decrypt(entry.EncryptedPassword, _masterPassword);
+                        _lastDecryptedRow.Cells["Password"].Value = new string('*', decrypted.Length);
+                    }
+                }
+
+                _lastDecryptedRow = null; // zurücksetzen
+            }
+        }
+
+        private void pnlEntryActions_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -179,7 +205,7 @@ namespace SimplePasswordManager
 
         }
 
-        private void MainForm_Load_1(object sender, EventArgs e)
+        private void lblTitel_Click(object sender, EventArgs e)
         {
 
         }

@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             tlpMain = new TableLayoutPanel();
+            pnlTitle = new Panel();
+            lblTitel = new Label();
             tlpTop = new TableLayoutPanel();
             pnlGenerator = new Panel();
             txtGenerated = new TextBox();
@@ -50,23 +53,24 @@
             txtUsername = new TextBox();
             lblNewEntryTitle = new Label();
             pnlSavedEntries = new Panel();
-            lblSavedTitle = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            lbl_gespZugDat = new Label();
             dgvEntries = new DataGridView();
             pnlEntryActions = new Panel();
+            btnHideEntry = new Button();
             btnDeleteEntry = new Button();
             btnShowPassword = new Button();
-            pnlTitle = new Panel();
-            lblTitel = new Label();
             pnlContent = new Panel();
             tlpMain.SuspendLayout();
+            pnlTitle.SuspendLayout();
             tlpTop.SuspendLayout();
             pnlGenerator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nudLength).BeginInit();
             pnlNewEntry.SuspendLayout();
             pnlSavedEntries.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEntries).BeginInit();
             pnlEntryActions.SuspendLayout();
-            pnlTitle.SuspendLayout();
             pnlContent.SuspendLayout();
             SuspendLayout();
             // 
@@ -74,26 +78,50 @@
             // 
             tlpMain.ColumnCount = 1;
             tlpMain.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tlpMain.Controls.Add(tlpTop, 0, 0);
-            tlpMain.Controls.Add(pnlSavedEntries, 0, 1);
+            tlpMain.Controls.Add(pnlTitle, 0, 0);
+            tlpMain.Controls.Add(tlpTop, 0, 1);
+            tlpMain.Controls.Add(pnlSavedEntries, 0, 2);
             tlpMain.Dock = DockStyle.Fill;
             tlpMain.Location = new Point(0, 0);
             tlpMain.Name = "tlpMain";
-            tlpMain.RowCount = 2;
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 220F));
-            tlpMain.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpMain.Size = new Size(800, 737);
+            tlpMain.RowCount = 3;
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
+            tlpMain.RowStyles.Add(new RowStyle());
+            tlpMain.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tlpMain.Size = new Size(800, 541);
             tlpMain.TabIndex = 0;
+            // 
+            // pnlTitle
+            // 
+            pnlTitle.BackColor = SystemColors.ActiveCaption;
+            pnlTitle.Controls.Add(lblTitel);
+            pnlTitle.Dock = DockStyle.Fill;
+            pnlTitle.Location = new Point(3, 3);
+            pnlTitle.Name = "pnlTitle";
+            pnlTitle.Size = new Size(794, 34);
+            pnlTitle.TabIndex = 8;
+            // 
+            // lblTitel
+            // 
+            lblTitel.Dock = DockStyle.Top;
+            lblTitel.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            lblTitel.Location = new Point(0, 0);
+            lblTitel.Name = "lblTitel";
+            lblTitel.Size = new Size(794, 30);
+            lblTitel.TabIndex = 0;
+            lblTitel.Text = "SimplePasswordManager";
+            lblTitel.TextAlign = ContentAlignment.MiddleCenter;
+            lblTitel.Click += lblTitel_Click;
             // 
             // tlpTop
             // 
+            tlpTop.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tlpTop.ColumnCount = 2;
             tlpTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlpTop.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tlpTop.Controls.Add(pnlGenerator, 0, 0);
             tlpTop.Controls.Add(pnlNewEntry, 1, 0);
-            tlpTop.Dock = DockStyle.Fill;
-            tlpTop.Location = new Point(3, 3);
+            tlpTop.Location = new Point(3, 43);
             tlpTop.Name = "tlpTop";
             tlpTop.RowCount = 1;
             tlpTop.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -116,20 +144,21 @@
             pnlGenerator.Name = "pnlGenerator";
             pnlGenerator.Size = new Size(391, 208);
             pnlGenerator.TabIndex = 0;
-            pnlGenerator.Paint += pnlGenerator_Paint;
             // 
             // txtGenerated
             // 
+            txtGenerated.BackColor = SystemColors.HighlightText;
             txtGenerated.Location = new Point(47, 168);
             txtGenerated.Name = "txtGenerated";
             txtGenerated.ReadOnly = true;
             txtGenerated.Size = new Size(293, 23);
             txtGenerated.TabIndex = 7;
-            txtGenerated.TextChanged += textBox1_TextChanged;
             // 
             // btnGenerate
             // 
             btnGenerate.BackColor = SystemColors.ActiveCaption;
+            btnGenerate.FlatAppearance.MouseOverBackColor = SystemColors.MenuHighlight;
+            btnGenerate.FlatStyle = FlatStyle.Flat;
             btnGenerate.Location = new Point(47, 135);
             btnGenerate.Name = "btnGenerate";
             btnGenerate.Size = new Size(293, 23);
@@ -147,7 +176,6 @@
             chkSpecial.TabIndex = 5;
             chkSpecial.Text = "Sonderzeichen";
             chkSpecial.UseVisualStyleBackColor = true;
-            chkSpecial.CheckedChanged += chkSpecial_CheckedChanged;
             // 
             // chkDigits
             // 
@@ -158,7 +186,6 @@
             chkDigits.TabIndex = 4;
             chkDigits.Text = "Zahlen";
             chkDigits.UseVisualStyleBackColor = true;
-            chkDigits.CheckedChanged += chkDigits_CheckedChanged;
             // 
             // chkUpper
             // 
@@ -169,7 +196,6 @@
             chkUpper.TabIndex = 3;
             chkUpper.Text = "Großbuchstaben";
             chkUpper.UseVisualStyleBackColor = true;
-            chkUpper.CheckedChanged += chkUpper_CheckedChanged;
             // 
             // lblLength
             // 
@@ -179,7 +205,6 @@
             lblLength.Size = new Size(83, 15);
             lblLength.TabIndex = 2;
             lblLength.Text = "Passwortlänge";
-            lblLength.Click += label1_Click;
             // 
             // nudLength
             // 
@@ -191,7 +216,6 @@
             nudLength.TabIndex = 1;
             nudLength.Tag = "";
             nudLength.Value = new decimal(new int[] { 8, 0, 0, 0 });
-            nudLength.ValueChanged += nudLength_ValueChanged;
             // 
             // lblGeneratorTitle
             // 
@@ -222,7 +246,6 @@
             pnlNewEntry.Name = "pnlNewEntry";
             pnlNewEntry.Size = new Size(391, 208);
             pnlNewEntry.TabIndex = 1;
-            pnlNewEntry.Paint += pnlNewEntry_Paint;
             // 
             // chkShowPassword
             // 
@@ -238,6 +261,8 @@
             // btnSaveEntry
             // 
             btnSaveEntry.BackColor = SystemColors.ActiveCaption;
+            btnSaveEntry.FlatAppearance.MouseOverBackColor = SystemColors.MenuHighlight;
+            btnSaveEntry.FlatStyle = FlatStyle.Flat;
             btnSaveEntry.Location = new Point(51, 166);
             btnSaveEntry.Name = "btnSaveEntry";
             btnSaveEntry.Size = new Size(266, 23);
@@ -287,7 +312,6 @@
             lblUsername.Size = new Size(123, 15);
             lblUsername.TabIndex = 2;
             lblUsername.Text = "Benutzername / Email";
-            lblUsername.Click += lblUsername_Click;
             // 
             // txtUsername
             // 
@@ -303,68 +327,106 @@
             lblNewEntryTitle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblNewEntryTitle.Location = new Point(0, 0);
             lblNewEntryTitle.Name = "lblNewEntryTitle";
-            lblNewEntryTitle.Size = new Size(211, 19);
+            lblNewEntryTitle.Padding = new Padding(2);
+            lblNewEntryTitle.Size = new Size(215, 23);
             lblNewEntryTitle.TabIndex = 0;
             lblNewEntryTitle.Text = "Neue Zugangsdaten speichern";
-            lblNewEntryTitle.Click += lblNewEntryTitle_Click;
             // 
             // pnlSavedEntries
             // 
+            pnlSavedEntries.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pnlSavedEntries.BorderStyle = BorderStyle.FixedSingle;
-            pnlSavedEntries.Controls.Add(lblSavedTitle);
-            pnlSavedEntries.Controls.Add(dgvEntries);
+            pnlSavedEntries.Controls.Add(tableLayoutPanel1);
             pnlSavedEntries.Controls.Add(pnlEntryActions);
-            pnlSavedEntries.Dock = DockStyle.Fill;
-            pnlSavedEntries.Location = new Point(3, 223);
+            pnlSavedEntries.Location = new Point(3, 263);
             pnlSavedEntries.Name = "pnlSavedEntries";
-            pnlSavedEntries.Size = new Size(794, 511);
+            pnlSavedEntries.Size = new Size(794, 275);
             pnlSavedEntries.TabIndex = 1;
-            pnlSavedEntries.Paint += pnlSavedEntries_Paint;
             // 
-            // lblSavedTitle
+            // tableLayoutPanel1
             // 
-            lblSavedTitle.Dock = DockStyle.Top;
-            lblSavedTitle.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            lblSavedTitle.Location = new Point(0, 0);
-            lblSavedTitle.Name = "lblSavedTitle";
-            lblSavedTitle.Padding = new Padding(2);
-            lblSavedTitle.Size = new Size(792, 22);
-            lblSavedTitle.TabIndex = 0;
-            lblSavedTitle.Text = "Gespeicherte Zugangsdaten";
-            lblSavedTitle.Click += lblSavedTitle_Click;
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(lbl_gespZugDat, 0, 0);
+            tableLayoutPanel1.Controls.Add(dgvEntries, 0, 1);
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 23F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.Size = new Size(792, 241);
+            tableLayoutPanel1.TabIndex = 10;
+            // 
+            // lbl_gespZugDat
+            // 
+            lbl_gespZugDat.AutoSize = true;
+            lbl_gespZugDat.Dock = DockStyle.Top;
+            lbl_gespZugDat.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lbl_gespZugDat.Location = new Point(3, 0);
+            lbl_gespZugDat.Name = "lbl_gespZugDat";
+            lbl_gespZugDat.Padding = new Padding(2);
+            lbl_gespZugDat.Size = new Size(786, 23);
+            lbl_gespZugDat.TabIndex = 3;
+            lbl_gespZugDat.Text = "Gespeicherte Zugangsdaten";
+            lbl_gespZugDat.Click += label3_Click;
             // 
             // dgvEntries
             // 
             dgvEntries.AllowUserToAddRows = false;
             dgvEntries.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvEntries.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Window;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.GradientInactiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dgvEntries.DefaultCellStyle = dataGridViewCellStyle1;
             dgvEntries.Dock = DockStyle.Fill;
-            dgvEntries.Location = new Point(0, 0);
+            dgvEntries.Location = new Point(3, 26);
             dgvEntries.Name = "dgvEntries";
             dgvEntries.ReadOnly = true;
             dgvEntries.RowHeadersVisible = false;
             dgvEntries.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvEntries.Size = new Size(792, 244);
+            dgvEntries.Size = new Size(786, 241);
             dgvEntries.TabIndex = 1;
-            dgvEntries.CellContentClick += dataGridView1_CellContentClick;
+            dgvEntries.CellContentClick += dgvEntries_CellContentClick;
             // 
             // pnlEntryActions
             // 
+            pnlEntryActions.Controls.Add(btnHideEntry);
             pnlEntryActions.Controls.Add(btnDeleteEntry);
             pnlEntryActions.Controls.Add(btnShowPassword);
             pnlEntryActions.Dock = DockStyle.Bottom;
-            pnlEntryActions.Location = new Point(0, 244);
+            pnlEntryActions.Location = new Point(0, 241);
             pnlEntryActions.Name = "pnlEntryActions";
-            pnlEntryActions.Size = new Size(792, 265);
+            pnlEntryActions.Size = new Size(792, 32);
             pnlEntryActions.TabIndex = 2;
-            pnlEntryActions.Paint += panel1_Paint;
+            pnlEntryActions.Paint += pnlEntryActions_Paint;
+            // 
+            // btnHideEntry
+            // 
+            btnHideEntry.BackColor = SystemColors.ActiveCaption;
+            btnHideEntry.FlatAppearance.MouseOverBackColor = SystemColors.MenuHighlight;
+            btnHideEntry.FlatStyle = FlatStyle.Flat;
+            btnHideEntry.Location = new Point(321, 5);
+            btnHideEntry.Name = "btnHideEntry";
+            btnHideEntry.Size = new Size(150, 23);
+            btnHideEntry.TabIndex = 9;
+            btnHideEntry.Text = "Verbergen";
+            btnHideEntry.UseVisualStyleBackColor = false;
+            btnHideEntry.Click += btnHideEntry_Click;
             // 
             // btnDeleteEntry
             // 
             btnDeleteEntry.BackColor = SystemColors.ActiveCaption;
-            btnDeleteEntry.Location = new Point(503, 4);
+            btnDeleteEntry.FlatAppearance.MouseOverBackColor = SystemColors.MenuHighlight;
+            btnDeleteEntry.FlatStyle = FlatStyle.Flat;
+            btnDeleteEntry.Location = new Point(603, 5);
             btnDeleteEntry.Name = "btnDeleteEntry";
-            btnDeleteEntry.Size = new Size(214, 23);
+            btnDeleteEntry.Size = new Size(150, 23);
             btnDeleteEntry.TabIndex = 9;
             btnDeleteEntry.Text = "Löschen!";
             btnDeleteEntry.UseVisualStyleBackColor = false;
@@ -373,43 +435,23 @@
             // btnShowPassword
             // 
             btnShowPassword.BackColor = SystemColors.ActiveCaption;
-            btnShowPassword.Location = new Point(71, 6);
+            btnShowPassword.FlatAppearance.MouseOverBackColor = SystemColors.MenuHighlight;
+            btnShowPassword.FlatStyle = FlatStyle.Flat;
+            btnShowPassword.Location = new Point(50, 5);
             btnShowPassword.Name = "btnShowPassword";
-            btnShowPassword.Size = new Size(214, 23);
+            btnShowPassword.Size = new Size(150, 23);
             btnShowPassword.TabIndex = 8;
             btnShowPassword.Text = "Anzeigen";
             btnShowPassword.UseVisualStyleBackColor = false;
             btnShowPassword.Click += btnShowPassword_Click;
             // 
-            // pnlTitle
-            // 
-            pnlTitle.BackColor = SystemColors.ActiveCaption;
-            pnlTitle.Controls.Add(lblTitel);
-            pnlTitle.Dock = DockStyle.Top;
-            pnlTitle.Location = new Point(0, 0);
-            pnlTitle.Name = "pnlTitle";
-            pnlTitle.Size = new Size(800, 33);
-            pnlTitle.TabIndex = 8;
-            // 
-            // lblTitel
-            // 
-            lblTitel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lblTitel.AutoSize = true;
-            lblTitel.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblTitel.Location = new Point(307, 0);
-            lblTitel.Name = "lblTitel";
-            lblTitel.Size = new Size(204, 30);
-            lblTitel.TabIndex = 0;
-            lblTitel.Text = "Passwordmanager";
-            lblTitel.Click += label3_Click;
-            // 
             // pnlContent
             // 
-            pnlContent.Anchor = AnchorStyles.Top;
             pnlContent.Controls.Add(tlpMain);
-            pnlContent.Location = new Point(0, 33);
+            pnlContent.Dock = DockStyle.Fill;
+            pnlContent.Location = new Point(0, 0);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(800, 737);
+            pnlContent.Size = new Size(800, 541);
             pnlContent.TabIndex = 3;
             // 
             // MainForm
@@ -417,12 +459,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 541);
-            Controls.Add(pnlTitle);
             Controls.Add(pnlContent);
             Name = "MainForm";
-            Text = "Form1";
-            Load += MainForm_Load_1;
+            Text = "SimplePasswordManager";
             tlpMain.ResumeLayout(false);
+            pnlTitle.ResumeLayout(false);
             tlpTop.ResumeLayout(false);
             pnlGenerator.ResumeLayout(false);
             pnlGenerator.PerformLayout();
@@ -430,10 +471,10 @@
             pnlNewEntry.ResumeLayout(false);
             pnlNewEntry.PerformLayout();
             pnlSavedEntries.ResumeLayout(false);
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEntries).EndInit();
             pnlEntryActions.ResumeLayout(false);
-            pnlTitle.ResumeLayout(false);
-            pnlTitle.PerformLayout();
             pnlContent.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -447,7 +488,6 @@
         private Panel pnlSavedEntries;
         private Label lblGeneratorTitle;
         private Label lblNewEntryTitle;
-        private Label lblSavedTitle;
         private NumericUpDown nudLength;
         private Label lblLength;
         private CheckBox chkSpecial;
@@ -464,11 +504,14 @@
         private Button btnSaveEntry;
         private CheckBox chkShowPassword;
         private DataGridView dgvEntries;
-        private Panel pnlEntryActions;
         private Button btnDeleteEntry;
-        private Button btnShowPassword;
         private Panel pnlTitle;
         private Label lblTitel;
         private Panel pnlContent;
+        private Label lbl_gespZugDat;
+        private Panel pnlEntryActions;
+        private Button btnHideEntry;
+        private Button btnShowPassword;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

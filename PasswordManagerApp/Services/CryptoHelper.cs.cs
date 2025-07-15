@@ -65,28 +65,36 @@ namespace PasswordManagerApp.Services
         /// </summary>
         public static string Decrypt(string toDecrypt, string password)
         {
-            // 1. Base64 dekodieren und Bestandteile extrahieren
-            byte[] data = Convert.FromBase64String(toDecrypt);
-            byte[] salt = data[0..16]; 
-            byte[] iv = data[16..32]; 
-            byte[] cipherBytes = data[32..]; 
+            byte[] data;
 
-            // 2. Key aus Passwort + Salt ableiten
+            try
+            {
+                data = Convert.FromBase64String(toDecrypt);
+            }
+            catch (FormatException)
+            {
+                throw new FormatException("Eingabe ist kein gültiger Base64-String.");
+            }
+
+            if (data.Length < 32)
+                throw new ArgumentOutOfRangeException("Verschlüsselter Text ist zu kurz für Salt + IV.");
+
+            byte[] salt = data[0..16];
+            byte[] iv = data[16..32];
+            byte[] cipherBytes = data[32..];
+
             using var rfc = new Rfc2898DeriveBytes(password, salt, 100_000, HashAlgorithmName.SHA256);
             byte[] aesKey = rfc.GetBytes(32);
 
-            // 3. AES konfigurieren mit Schlüssel + IV
             using var aes = Aes.Create();
             aes.Key = aesKey;
             aes.IV = iv;
 
-            // 4. Entschlüsselung per CryptoStream
             using var ms = new MemoryStream(cipherBytes);
             using var cs = new CryptoStream(ms, aes.CreateDecryptor(), CryptoStreamMode.Read);
             using var reader = new StreamReader(cs, Encoding.UTF8);
-            string decrypted = reader.ReadToEnd();
-            
-            return decrypted;
+            return reader.ReadToEnd();
         }
+
     }
 }

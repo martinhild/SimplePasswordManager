@@ -1,14 +1,4 @@
 ﻿using PasswordManagerApp.Services;
-using SimplePasswordManager;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace PasswordManagerApp
 {
@@ -43,6 +33,7 @@ namespace PasswordManagerApp
 
             if (masterPwService.VerifyMasterPassword(pw))
             {
+                this.Tag = pw; // Passwort „mitgeben“
                 this.DialogResult = DialogResult.OK; // Login erfolgreich
                 this.Close();
             }
@@ -53,6 +44,11 @@ namespace PasswordManagerApp
         }
 
         private void txtMasterPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_masterPassword_Click(object sender, EventArgs e)
         {
 
         }

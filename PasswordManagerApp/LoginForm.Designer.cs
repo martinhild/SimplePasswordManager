@@ -31,6 +31,7 @@
             txtMasterPassword = new TextBox();
             chkShowPassword = new CheckBox();
             btnLogin = new Button();
+            lbl_masterPassword = new Label();
             SuspendLayout();
             // 
             // txtMasterPassword
@@ -64,16 +65,30 @@
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click;
             // 
+            // lbl_masterPassword
+            // 
+            lbl_masterPassword.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lbl_masterPassword.AutoSize = true;
+            lbl_masterPassword.Font = new Font("Segoe UI", 10F);
+            lbl_masterPassword.Location = new Point(225, 161);
+            lbl_masterPassword.Name = "lbl_masterPassword";
+            lbl_masterPassword.Size = new Size(170, 19);
+            lbl_masterPassword.TabIndex = 3;
+            lbl_masterPassword.Text = "Masterpasswort eingeben:";
+            lbl_masterPassword.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_masterPassword.Click += lbl_masterPassword_Click;
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lbl_masterPassword);
             Controls.Add(btnLogin);
             Controls.Add(chkShowPassword);
             Controls.Add(txtMasterPassword);
             Name = "LoginForm";
-            Text = "LoginForm";
+            Text = "SimplePasswordManager";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -83,5 +98,6 @@
         private TextBox txtMasterPassword;
         private CheckBox chkShowPassword;
         private Button btnLogin;
+        private Label lbl_masterPassword;
     }
 }
