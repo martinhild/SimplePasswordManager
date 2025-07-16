@@ -9,7 +9,8 @@ namespace PasswordManagerApp.Tests
         [InlineData("user", "", "Notiz", "Passwort leer.")]
         [InlineData("user", "abc123", "", "Beschreibung leer.")]
         [InlineData("user", "abc", "Notiz", "Passwort zu kurz (mind. 6 Zeichen).")]
-        [InlineData("user", "abc123", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "Beschreibung zu lang. (max. 40 Zeichen)")]
+        [InlineData("user", "abc123", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "Beschreibung zu lang. (max. 40 Zeichen)")]
         public void IsValidEntry_InvalidInput_ReturnsFalseAndErrorMessage(
             string username, string password, string description, string expectedError)
         {

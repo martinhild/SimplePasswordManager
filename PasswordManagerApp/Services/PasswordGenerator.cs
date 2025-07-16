@@ -7,7 +7,7 @@ namespace PasswordManagerApp.Services
         private static readonly char[] lower = "abcdefghijklmnopqrstuvwxyz".ToCharArray();
         private static readonly char[] upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
         private static readonly char[] digits = "0123456789".ToCharArray();
-        private static readonly char[] special = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~".ToCharArray();
+        private static readonly char[] special = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~".ToCharArray();       
 
         public string Generate(int length, bool useUpper, bool useDigits, bool useSpecial)
         {                        
