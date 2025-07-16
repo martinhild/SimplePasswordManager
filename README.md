@@ -43,7 +43,7 @@ UML-Diagramm der wichtigsten Klassenstrukturen:
 
 | Komponente           | Beschreibung                                                |
 |----------------------|-------------------------------------------------------------|
-| **C# (.NET 6)**       | Moderne objektorientierte Programmiersprache                |
+| **C# (.NET 6)**       | Programmiersprache                |
 | **WinForms**          | GUI-Framework für klassische Windows-Desktopanwendungen     |
 | **SQLite**            | Leichtgewichtiges, dateibasiertes Datenbanksystem           |
 | **Entity Framework Core** | ORM für Datenbankzugriff mit LINQ & DbContext         |
@@ -52,8 +52,3 @@ UML-Diagramm der wichtigsten Klassenstrukturen:
 
 ---
 
-## 🛠️ Setup & Nutzung
-
-1. **Projekt klonen**
-   ```bash
-   git clone https://github.com/dein-nutzername/SimplePasswordManager.git
