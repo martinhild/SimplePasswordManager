@@ -5,7 +5,7 @@ Ein einfacher, lokal laufender Passwortmanager in C# (.NET 6) mit WinForms und S
 
 ---
 
-📄 **[👉 Zur Projektdokumentation (PDF)](docs/Dokumentation/Dokumentation_SimplePasswordManager.pdf)**
+📄 **[ 👉 Zur Projektdokumentation (PDF)](docs/Dokumentation/Dokumentation_SimplePasswordManager.pdf)**
   
 
 
