@@ -23,6 +23,11 @@ Ein einfacher, lokal laufender Passwortmanager in C# (.NET 6) mit WinForms und S
 
 ---
 
+## 📸 Vorschau
+
+![Screenshot der Anwendung](docs/screenshots/screenshot_1.png)
+
+
 ## 📷 Mockup
 
 Entwurf der Anwendung:
