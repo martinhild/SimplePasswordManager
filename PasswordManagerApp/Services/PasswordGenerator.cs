@@ -49,7 +49,7 @@ namespace PasswordManagerApp.Services
                 buildPwList.Add(poolList[randomIndex]);
             }
 
-            // jetzt muss buildPwList noch gemischt werden.
+            // buildPwList mischen
             var shuffled = buildPwList
                 .OrderBy(_ => RandomNumberGenerator.GetInt32(0, buildPwList.Count))
                 .ToArray();
