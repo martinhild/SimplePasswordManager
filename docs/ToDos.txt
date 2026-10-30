@@ -1,5 +1,0 @@
-Wie könnte es weiter gehen?
-- Funktion um Masterpasswort zu ändern.
-- Mehrere Benutzer anlegen.
-- Anzeige für Passwortstärke hinzufügen
-- Einträge ändern
