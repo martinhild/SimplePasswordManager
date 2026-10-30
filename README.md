@@ -17,9 +17,9 @@ Ein einfacher, lokal laufender Passwortmanager in C# (.NET 6) mit WinForms und S
 - 🖥️ **Benutzeroberfläche – intuitive GUI für Passwortverwaltung
 - 🧠 **Passwortgenerator** mit einstellbarer Länge und Zeichenauswahl (Zahlen, Sonderzeichen, Groß-/Kleinbuchstaben)
 - ✅ **Passwortvalidierung** und Eingabekontrolle
-- 🔒 **AES-256-Verschlüsselung** mit Salt, PBKDF2 und Initialisierungsvektor (IV)
+- 🔒 **AES-256-Verschlüsselung**
 - 💾 **Lokale Speicherung mit SQLite** (via Entity Framework Core)
-- 🧪 **Unit-Tests mit xUnit** für zentrale Logik
+- 🧪 **Unit-Tests mit xUnit**
 
 ---
 
