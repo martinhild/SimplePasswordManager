@@ -1,59 +1,42 @@
 # 🔐 SimplePasswordManager
 
-Ein einfacher, lokal laufender Passwortmanager in C# (.NET 6) mit WinForms und SQLite
-(Datenbankanbindung mit Entity Framework Core, GUI-Entwicklung, Verschlüsselung)
+A small practice project for building a local password manager with **C#, .NET 8, Windows Forms, and SQLite**.
 
----
-
-📄 **[ 👉 Zur Projektdokumentation (PDF)](docs/Dokumentation/Dokumentation_SimplePasswordManager.pdf)**
-  
-
-
----
+The main goal was to go through a complete software development process on a small scale — from planning and GUI mockups to UML class diagrams, implementation, testing, and documentation. Along the way, I practiced database access, encryption, and desktop UI development.
 
 ## ✨ Features
 
-- 💬 **Login mit Masterpasswort**
-- 🖥️ **Benutzeroberfläche – intuitive GUI für Passwortverwaltung
-- 🧠 **Passwortgenerator** mit einstellbarer Länge und Zeichenauswahl (Zahlen, Sonderzeichen, Groß-/Kleinbuchstaben)
-- ✅ **Passwortvalidierung** und Eingabekontrolle
-- 🔒 **AES-256-Verschlüsselung**
-- 💾 **Lokale Speicherung mit SQLite** (via Entity Framework Core)
-- 🧪 **Unit-Tests mit xUnit**
+- 🔑 **Master password login** with salted SHA-256 hash verification
+- 🖥️ **Windows Forms GUI** for managing passwords
+- 🧠 **Password generator** with configurable length and character types
+- ✅ **Input validation** and password checks
+- 🔒 **AES-256 encryption** of stored passwords, using PBKDF2 for key derivation
+- 💾 **Local SQLite storage** with Entity Framework Core
+- 🧪 **Unit tests** with xUnit
 
----
+## 🛠️ Technologies
 
-## 📸 Vorschau
+C# · .NET 8 · Windows Forms · SQLite · Entity Framework Core · AES-256 · PBKDF2 · xUnit
 
-![Screenshot der Anwendung](docs/screenshots/screenshot_1.png)
+## 📸 Screenshot
+
+![Application screenshot](docs/screenshots/screenshot_1.png)
+
+## 📚 Documentation
+
+### UML Class Diagram
+
+![UML Class Diagram](docs/UML/class_diagram.png)
+
+### GUI Mockup
+
+![GUI Mockup](docs/mockup/mockup.jpg)
+
+### Project Documentation
+
+[Project Documentation (PDF)](docs/Dokumentation/Dokumentation_SimplePasswordManager.pdf)
 
 
-## 📷 Mockup
+## ℹ️ Note
 
-Entwurf der Anwendung:
-
-![Mockup](docs/mockup/mockup.jpg)
-
----
-
-## 🧩 Klassendiagramm
-
-UML-Diagramm der wichtigsten Klassenstrukturen:
-
-![Klassendiagramm](docs/UML/class_diagram.png)
-
----
-
-## 🚀 Technologien
-
-| Komponente           | Beschreibung                                                |
-|----------------------|-------------------------------------------------------------|
-| **C# (.NET 6)**       | Programmiersprache                |
-| **WinForms**          | GUI-Framework für klassische Windows-Desktopanwendungen     |
-| **SQLite**            | Leichtgewichtiges, dateibasiertes Datenbanksystem           |
-| **Entity Framework Core** | ORM für Datenbankzugriff mit LINQ & DbContext         |
-| **xUnit**             | Test-Framework für Unit-Tests                               |
-| **AES / PBKDF2**      | Industriestandard für Verschlüsselung und Schlüsselableitung |
-
----
-
+This is a learning project, **not a production-ready password manager**.
