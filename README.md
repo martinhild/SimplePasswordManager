@@ -35,8 +35,3 @@ C# · .NET 8 · Windows Forms · SQLite · Entity Framework Core · AES-256 · P
 ### Project Documentation
 
 [Project Documentation (PDF)](docs/Dokumentation/Dokumentation_SimplePasswordManager.pdf)
-
-
-## ℹ️ Note
-
-This is a learning project, **not a production-ready password manager**.
